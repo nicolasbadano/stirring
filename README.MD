@@ -13,6 +13,10 @@ This simulation would benefit from using a finer mesh, and solving more of the t
 * Run the `prepare.sh` to generate the mesh and setup the simulation.
 * Then run the case with `interMixingFoam`
 
+## Results
+
+[![Watch the video](https://img.youtube.com/vi/qQmnty3gCW0/default.jpg)](https://youtu.be/qQmnty3gCW0)
+
 ## License
 
 This project is licensed under the MIT License - see the LICENSE.md file for details

@@ -15,7 +15,7 @@ This simulation would benefit from using a finer mesh, and solving more of the t
 
 ## Results
 
-[![Watch the video](https://img.youtube.com/vi/qQmnty3gCW0/default.jpg)](https://youtu.be/qQmnty3gCW0)
+[![Watch the video](https://img.youtube.com/vi/qQmnty3gCW0/maxresdefault.jpg)](https://youtu.be/qQmnty3gCW0)
 
 ## License
 

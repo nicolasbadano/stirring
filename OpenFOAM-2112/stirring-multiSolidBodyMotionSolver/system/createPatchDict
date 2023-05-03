@@ -1,0 +1,84 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2112                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      createPatchDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+// Do a synchronisation of coupled points after creation of any patches.
+// Note: this does not work with points that are on multiple coupled patches
+//       with transformations (i.e. cyclics).
+pointSync false;
+
+// Patches to create.
+patches
+(
+    {
+        //- Master side patch
+        name            AMIOUT1;
+        patchInfo
+        {
+            type            cyclicAMI;
+            matchTolerance  0.0001;
+            neighbourPatch  AMIOUT2;
+            transform       noOrdering;
+        }
+        constructFrom patches;
+        patches (outerCylinder);
+    }
+
+    {
+        //- Slave side patch
+        name            AMIOUT2;
+        patchInfo
+        {
+            type            cyclicAMI;
+            matchTolerance  0.0001;
+            neighbourPatch  AMIOUT1;
+            transform       noOrdering;
+        }
+        constructFrom patches;
+        patches (outerCylinder_slave);
+    }
+
+    {
+        //- Master side patch
+        name            AMIIN1;
+        patchInfo
+        {
+            type            cyclicAMI;
+            matchTolerance  0.0001;
+            neighbourPatch  AMIIN2;
+            transform       noOrdering;
+        }
+        constructFrom patches;
+        patches (innerCylinder);
+    }
+
+    {
+        //- Slave side patch
+        name            AMIIN2;
+        patchInfo
+        {
+            type            cyclicAMI;
+            matchTolerance  0.0001;
+            neighbourPatch  AMIIN1;
+            transform       noOrdering;
+        }
+        constructFrom patches;
+        patches (innerCylinder_slave);
+    }
+
+);
+
+
+// ************************************************************************* //

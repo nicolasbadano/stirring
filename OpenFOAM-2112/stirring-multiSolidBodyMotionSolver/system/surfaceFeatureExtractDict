@@ -1,0 +1,39 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v2112                                 |
+|   \\  /    A nd           | Website:  www.openfoam.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      surfaceFeatureExtractDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+
+innerCylinder_T.stl
+{
+    #include "surfaceFeatureExtractDictDefaults"
+}
+
+outerCylinder_T.stl
+{
+    #include "surfaceFeatureExtractDictDefaults"
+}
+
+mug_T.stl
+{
+    #include "surfaceFeatureExtractDictDefaults"
+}
+
+teaspoon_T.stl
+{
+    #include "surfaceFeatureExtractDictDefaults"
+}
+
+
+// ************************************************************************* //
